@@ -1,0 +1,189 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Taslak.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+    <meta name="description" content="" />
+    <meta name="author" content="">
+    <link rel="icon" href="bootstrap/favicon.ico" />
+
+    <title>PNPGaraj Takip</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/starter-template.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
+    <style>
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -6px;
+                margin-left: -1px;
+                -webkit-border-radius: 0 6px 6px 6px;
+                -moz-border-radius: 0 6px 6px;
+                border-radius: 0 6px 6px 6px;
+            }
+
+            .dropdown-submenu:hover > .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-submenu > a:after {
+                display: block;
+                content: " ";
+                float: right;
+                width: 0;
+                height: 0;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                border-left-color: #ccc;
+                margin-top: 5px;
+                margin-right: -10px;
+            }
+
+            .dropdown-submenu:hover > a:after {
+                border-left-color: #fff;
+            }
+
+            .dropdown-submenu.pull-left {
+                float: none;
+            }
+
+                .dropdown-submenu.pull-left > .dropdown-menu {
+                    left: -100%;
+                    margin-left: 10px;
+                    -webkit-border-radius: 6px 0 6px 6px;
+                    -moz-border-radius: 6px 0 6px 6px;
+                    border-radius: 6px 0 6px 6px;
+                }
+    </style>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.aspx">PNPGaraj</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-users"></i>Müşteri İşlemleri</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <asp:LinkButton ID="LinkButtonmusteriler" CssClass="dropdown-item" PostBackUrl="~/musteriler.aspx" runat="server"> Müşteriler</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtonmusteri_grup_kartlari" CssClass="dropdown-item" PostBackUrl="~/musteri_grup_kartlari.aspx" runat="server"> Müşteri Grup Kartları</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtongelir_grup_kartlari" CssClass="dropdown-item" PostBackUrl="~/gelir_grup_kartlari.aspx" runat="server"> Gelir Grup Kartları</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtonborc_İslemi" CssClass="dropdown-item" PostBackUrl="~/borc_İslemi.aspx" runat="server"> Borç İşlemi</asp:LinkButton>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-building"></i>Şirket İşlemleri</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <asp:LinkButton ID="LinkButtonsirket_kartlari" CssClass="dropdown-item" PostBackUrl="~/sirket_kartlari.aspx" runat="server"> Şirket Kartları</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtondepartman_kartlari" CssClass="dropdown-item" PostBackUrl="~/departman_kartlari.aspx" runat="server"> Departman Kartları</asp:LinkButton>
+
+                        </div>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <asp:LinkButton ID="LinkButtonarac_kartlari" CssClass="nav-link" PostBackUrl="~/arac_kartlari.aspx" runat="server"><i class="fa fa-car"></i> Araç Kartları</asp:LinkButton>
+                    </li>
+
+
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-arrow-down"></i>Kasa İşlemleri</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <asp:LinkButton ID="LinkButtonkasadurumu" CssClass="dropdown-item" PostBackUrl="~/musteri_tahsilat.aspx" runat="server"> Kasa Durumu</asp:LinkButton>
+                            <h6 class="dropdown-header">Kasa Girişi</h6>
+                            <asp:LinkButton ID="LinkButtonmusteri_tahsilat" CssClass="dropdown-item" PostBackUrl="~/musteri_tahsilat.aspx" runat="server"> Müşteri Tahsilat</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtonacik_hesap_tahsilat" CssClass="dropdown-item" PostBackUrl="~/acik_hesap_tahsilat.aspx" runat="server"> Açık Hesap Tahsilat</asp:LinkButton>
+                            <h6 class="dropdown-header">Kasa Çıkışı</h6>
+                            <asp:LinkButton ID="LinkButtoncari_odeme" CssClass="dropdown-item" PostBackUrl="~/cari_odeme.aspx" runat="server"> Cari Ödeme</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtongider_odeme" CssClass="dropdown-item" PostBackUrl="~/gider_odeme.aspx" runat="server"> Gider Ödeme</asp:LinkButton>
+                        </div>
+
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-tie"></i>Cari İşlemleri</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <asp:LinkButton ID="LinkButtoncariler" CssClass="dropdown-item" PostBackUrl="~/cariler.aspx" runat="server"> Cariler</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtoncari_grup_kartlari" CssClass="dropdown-item" PostBackUrl="~/cari_grup_kartlari.aspx" runat="server"> Cari Grup Kartları</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtongider_grup_kartlari" CssClass="dropdown-item" PostBackUrl="~/gider_grup_kartlari.aspx" runat="server"> Gider Grup Kartları</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtoncari_alacak_İslemi" CssClass="dropdown-item" PostBackUrl="~/cari_alacak_İslemi.aspx" runat="server"> Cari Alacak İşlemi</asp:LinkButton>
+
+                        </div>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chart-bar"></i>Raporlar</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <asp:LinkButton ID="LinkButtonr_servisi_gelen_araclar" CssClass="dropdown-item" PostBackUrl="~/r_servisi_gelen_araclar.aspx" runat="server"> Servisi Gelen Araçlar</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtonr_gelir_gider_raporu" CssClass="dropdown-item" PostBackUrl="~/r_gelir_gider_raporu.aspx" runat="server"> Gelir Gider Raporu</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButtonr_acik_hesaplar" CssClass="dropdown-item" PostBackUrl="~/r_acik_hesaplar.aspx" runat="server"> Açık Hesaplar</asp:LinkButton>
+
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <asp:LinkButton ID="LinkButtonkullanicilar" CssClass="nav-link" PostBackUrl="~/kullanicilar.aspx" runat="server"><i class="fa fa-user-alt"></i> Kullanıcılar</asp:LinkButton>
+
+                    </li>
+
+                    <%--    <li class="nav-item">
+                        <asp:LinkButton ID="LinkButtoncikisyap" CssClass="nav-link" PostBackUrl="~/login.aspx" runat="server" OnClick="LinkButtoncikisyap_Click"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</asp:LinkButton>
+                    </li>--%>
+                </ul>
+
+                <div class="form-inline my-2 my-lg-0">
+                    <%--<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">--%>
+                    <%--     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--%>
+                    <asp:LinkButton ID="LinkButtoncikisyap" CssClass="btn btn-outline-danger my-2 my-sm-0" PostBackUrl="~/login.aspx" runat="server" OnClick="LinkButtoncikisyap_Click"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</asp:LinkButton>
+
+                </div>
+
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <br />
+            <br />
+            <br />
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="bootstrap/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="bootstrap/jquery-slim.min.js"><\/script>')</script>
+        <script src="bootstrap/popper.min.js"></script>
+        <script src="bootstrap/bootstrap.min.js"></script>
+
+    </form>
+</body>
+</html>
